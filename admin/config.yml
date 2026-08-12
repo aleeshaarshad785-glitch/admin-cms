@@ -1,0 +1,16 @@
+backend:
+  name: github
+  repo: aleeshaarshad785-glitch/admin-cms
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+    - name: "posts"
+    label: "Posts"
+    folder: "content/posts"
+    create: true
+    fields:
+            - {label: "Title", name: "title", widget: "string"}
+‎-{label: "body" , name: "body" ,widget: "markdown"}
