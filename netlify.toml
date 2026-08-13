@@ -1,9 +1,6 @@
 [build]
-command =""
-  publish = ".."
-
+  publish = "."
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
   status = 200
-  force = true
