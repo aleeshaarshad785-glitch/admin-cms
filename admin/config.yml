@@ -1,5 +1,5 @@
 backend:
-  name: git-gatway
+  name: git-gateway
   repo: aleeshaarshad785-glitch/admin-cms
   branch: main
 
