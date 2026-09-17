@@ -6,45 +6,46 @@
   <title>Phones Master | PRC Chowk, Mardan</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-[#F4F0EA] text-slate-800 font-sans">
+<body class="bg-white text-slate-800 font-sans">
 
   <!-- Header -->
-  <header class="max-w-6xl mx-auto p-4 flex justify-between items-center">
-    <h1 class="text-xl font-bold">Phones Master</h1>
+  <header class="max-w-6xl mx-auto p-4 flex justify-between items-center border-b border-gray-100">
+    <h1 class="text-xl font-bold text-slate-900">Phones Master</h1>
     <nav class="hidden md:flex space-x-6 text-sm font-medium">
-      <a href="#home" class="hover:text-amber-700">Home</a>
-      <a href="#products" class="hover:text-amber-700">Products</a>
-      <a href="#services" class="hover:text-amber-700">Services</a>
-      <a href="#contact" class="hover:text-amber-700">Contact</a>
+      <a href="#home" class="hover:text-yellow-600">Home</a>
+      <a href="#products" class="hover:text-yellow-600">Products</a>
+      <a href="#services" class="hover:text-yellow-600">Services</a>
+      <a href="#gallery" class="hover:text-yellow-600">Gallery</a>
+      <a href="#contact" class="hover:text-yellow-600">Contact</a>
     </nav>
-    <a href="https://wa.me/" target="_blank" class="bg-amber-600 text-white text-xs px-4 py-2 rounded-full font-semibold hover:bg-amber-700">
-      WhatsApp
+    <a href="https://wa.me/" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-slate-900 text-xs px-4 py-2 rounded-full font-bold shadow-sm transition">
+      WhatsApp Us
     </a>
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  <section id="home" class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-amber-50/40 rounded-3xl my-6">
     <div>
-      <span class="text-xs uppercase tracking-widest text-amber-700 font-bold border-l-2 border-amber-700 pl-2">PRC CHOWK · MARDAN</span>
-      <h2 class="text-4xl font-extrabold mt-2 leading-tight">Your trusted mobile shop, <br><span class="text-amber-700">Phones Master.</span></h2>
+      <span class="text-xs uppercase tracking-widest text-yellow-700 font-bold border-l-2 border-yellow-600 pl-2">PRC CHOWK · MARDAN</span>
+      <h2 class="text-4xl font-extrabold mt-2 leading-tight text-slate-900">Your trusted mobile shop, <br><span class="text-yellow-600">Phones Master.</span></h2>
       <p class="text-sm text-gray-600 mt-4">iPhone, Samsung, Vivo, Oppo & more — checked, verified and ready to use. Visit the shop or message us anytime.</p>
       <div class="mt-6 flex space-x-3">
-        <a href="https://wa.me/" target="_blank" class="bg-amber-600 text-white text-sm px-5 py-2.5 rounded-xl font-semibold shadow hover:bg-amber-700">Chat on WhatsApp</a>
+        <a href="https://wa.me/" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-slate-900 text-sm px-5 py-2.5 rounded-xl font-bold shadow-md transition">Chat on WhatsApp</a>
         <a href="#products" class="border border-slate-800 text-sm px-5 py-2.5 rounded-xl font-semibold hover:bg-slate-800 hover:text-white transition">View Products</a>
       </div>
     </div>
-    <div class="bg-slate-900 p-4 rounded-3xl shadow-xl text-white">
-      <div class="h-64 rounded-2xl overflow-hidden bg-gray-800">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Shop Feature">
+    <div class="bg-white p-3 rounded-3xl shadow-lg border border-yellow-100">
+      <div class="h-64 rounded-2xl overflow-hidden bg-gray-100">
+        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Phones Display">
       </div>
     </div>
   </section>
 
-  <!-- Dynamic Products Catalog Section -->
+  <!-- Dynamic CMS Products Section -->
   <section id="products" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="border-b pb-4 mb-8 flex justify-between items-end">
+    <div class="border-b pb-4 mb-8 flex justify-between items-end border-yellow-200">
       <div>
-        <h3 class="text-2xl font-bold">Available Smartphones</h3>
+        <h3 class="text-2xl font-bold text-slate-900">Available Smartphones</h3>
         <p class="text-xs text-gray-500">Live inventory updated directly from CMS</p>
       </div>
     </div>
@@ -55,20 +56,39 @@
   </section>
 
   <!-- Services Section -->
-  <section id="services" class="max-w-6xl mx-auto px-4 py-12 border-t">
-    <h3 class="text-2xl font-bold mb-6">Our Services</h3>
+  <section id="services" class="max-w-6xl mx-auto px-4 py-12 border-t border-gray-100">
+    <h3 class="text-2xl font-bold mb-6 text-slate-900">Our Services</h3>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-        <h4 class="font-bold text-lg mb-2">Buy & Sell</h4>
-        <p class="text-xs text-gray-500">Get the best market value for your old phone or buy verified pre-owned phones.</p>
+      <div class="bg-amber-50/50 p-6 rounded-2xl border border-yellow-100">
+        <h4 class="font-bold text-lg mb-2 text-slate-900">Buy & Sell</h4>
+        <p class="text-xs text-gray-600">Get the best market value for your old phone or buy verified pre-owned phones.</p>
       </div>
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-        <h4 class="font-bold text-lg mb-2">100% Original Products</h4>
-        <p class="text-xs text-gray-500">All phones are non-PTA/PTA approved with genuine battery health & condition.</p>
+      <div class="bg-amber-50/50 p-6 rounded-2xl border border-yellow-100">
+        <h4 class="font-bold text-lg mb-2 text-slate-900">100% Original Products</h4>
+        <p class="text-xs text-gray-600">All phones are non-PTA/PTA approved with genuine battery health & condition.</p>
       </div>
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-        <h4 class="font-bold text-lg mb-2">Instant WhatsApp Support</h4>
-        <p class="text-xs text-gray-500">Directly query about any device model, price or availability via WhatsApp.</p>
+      <div class="bg-amber-50/50 p-6 rounded-2xl border border-yellow-100">
+        <h4 class="font-bold text-lg mb-2 text-slate-900">Instant Support</h4>
+        <p class="text-xs text-gray-600">Directly query about any device model, price or availability via WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="max-w-6xl mx-auto px-4 py-12 border-t border-gray-100">
+    <h3 class="text-2xl font-bold mb-6 text-slate-900">Shop Gallery</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="h-40 rounded-2xl bg-gray-100 overflow-hidden shadow-sm">
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
+      </div>
+      <div class="h-40 rounded-2xl bg-gray-100 overflow-hidden shadow-sm">
+        <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
+      </div>
+      <div class="h-40 rounded-2xl bg-gray-100 overflow-hidden shadow-sm">
+        <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
+      </div>
+      <div class="h-40 rounded-2xl bg-gray-100 overflow-hidden shadow-sm">
+        <img src="https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover">
       </div>
     </div>
   </section>
@@ -114,14 +134,14 @@
               const image = getVal('image');
 
               const card = `
-                <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition">
-                  <div class="h-48 rounded-xl bg-gray-50 overflow-hidden flex items-center justify-center mb-3">
+                <div class="bg-white rounded-2xl p-4 shadow-sm border border-yellow-100 hover:shadow-md transition">
+                  <div class="h-48 rounded-xl bg-amber-50/50 overflow-hidden flex items-center justify-center mb-3">
                     ${image ? `<img src="${image}" class="w-full h-full object-contain p-2 transform scale-105">` : '<span class="text-gray-400 text-xs">No Image</span>'}
                   </div>
-                  <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full uppercase">${brand}</span>
-                  <h4 class="text-base font-bold mt-2">${title}</h4>
+                  <span class="text-[10px] font-bold text-yellow-700 bg-yellow-50 px-2.5 py-1 rounded-full uppercase">${brand}</span>
+                  <h4 class="text-base font-bold mt-2 text-slate-900">${title}</h4>
                   <p class="text-xs text-gray-500 mt-1">${specs} • ${condition}</p>
-                  <div class="mt-4 pt-3 border-t flex items-center justify-between">
+                  <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
                     <div>
                       <span class="text-xs text-gray-400 block">Price</span>
                       <span class="text-sm font-extrabold text-slate-900">PKR ${price}</span>
