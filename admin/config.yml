@@ -2,15 +2,21 @@ backend:
   name: git-gateway
   repo: aleeshaarshad785-glitch/admin-cms
   branch: main
-
-media_folder: "uploads"
-public_folder: "/uploads"
+  
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "posts"
-    label: "Posts"
-    folder: "content/posts"
+  - name: "phones"
+    label: "Phones & Products"
+    folder: "content/phones"
     create: true
+    slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - { label: "Phone Title", name: "title", widget: "string" }
+      - { label: "Brand", name: "brand", widget: "select", options: ["iPhone", "Samsung", "Vivo", "Oppo", "Xiaomi", "Other"] }
+      - { label: "Price (PKR)", name: "price", widget: "string" }
+      - { label: "Storage & Ram", name: "specs", widget: "string", default: "128GB / 8GB" }
+      - { label: "Battery Health / Condition", name: "condition", widget: "string", default: "100% Battery / 10/10 Condition" }
+      - { label: "Main Image", name: "image", widget: "image" }
+      - { label: "Description / Details", name: "body", widget: "markdown" }
