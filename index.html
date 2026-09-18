@@ -1,147 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phones Master | PRC Chowk, Mardan</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<title>Phones Master | Malakand Chowk, Mardan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --yellow:#F2B705;
+    --yellow-dark:#C89400;
+    --yellow-light:#FFF7DE;
+    --ink:#16181C;
+    --gray:#4B5563;
+    --line:#ECECEC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{ scroll-behavior:smooth; background:#FFFFFF; color-scheme:light; }
+  body{
+    background:#FFFFFF !important;
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    line-height:1.5;
+  }
+  a{ text-decoration:none; color:inherit; }
+  h1,h2,h3,.font-display{ font-family:'Sora', sans-serif; }
+  img{ display:block; max-width:100%; }
+  section, header, footer{ background-color:#FFFFFF; }
+  .wrap{ max-width:1100px; margin:0 auto; padding-left:24px; padding-right:24px; }
+
+  /* NAV */
+  header{ position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--line); }
+  nav{ max-width:1100px; margin:0 auto; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; }
+  .logo{ font-weight:800; font-size:1.6rem; }
+  .logo .accent{ color:var(--yellow-dark); }
+  .nav-links{ display:flex; gap:30px; font-weight:600; font-size:0.95rem; }
+  .nav-links a:hover{ color:var(--yellow-dark); }
+  .btn-wa-small{ background:var(--yellow); color:var(--ink); font-weight:700; font-size:0.9rem; padding:10px 18px; border-radius:8px; white-space:nowrap; transition:0.2s; }
+  .btn-wa-small:hover{ background:var(--yellow-dark); color:#fff; }
+
+  /* HERO */
+  .hero{ padding:64px 24px 80px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center; scroll-margin-top:80px; }
+  .eyebrow{ display:inline-block; color:var(--yellow-dark); font-weight:700; font-size:0.8rem; letter-spacing:1.5px; text-transform:uppercase; border-left:2px solid var(--yellow); padding-left:12px; margin-bottom:20px; }
+  h1{ font-weight:800; font-size:2.8rem; line-height:1.15; }
+  h1 .accent{ color:var(--yellow); -webkit-text-stroke:1px var(--yellow-dark); }
+  .hero p{ margin-top:20px; color:var(--gray); font-size:1.1rem; max-width:460px; }
+  .hero-actions{ margin-top:32px; display:flex; flex-wrap:wrap; gap:12px; }
+  .btn-primary{ background:var(--yellow); color:var(--ink); font-weight:700; padding:14px 26px; border-radius:12px; transition:0.2s; display:inline-block; }
+  .btn-primary:hover{ background:var(--yellow-dark); color:#fff; }
+  .btn-outline{ border:2px solid var(--ink); font-weight:700; padding:12px 24px; border-radius:12px; transition:0.2s; display:inline-block; }
+  .btn-outline:hover{ background:var(--ink); color:#fff; }
+
+  .hero-visual{ position:relative; }
+  .hero-visual .frame{ border-radius:24px; overflow:hidden; border:1px solid var(--line); box-shadow:0 20px 50px -20px rgba(242,183,5,0.35); }
+  .hero-visual img{ width:100%; height:320px; object-fit:cover; }
+  .spec-tag{ position:absolute; background:#fff; border:1px solid var(--line); border-radius:8px; padding:10px 14px; font-size:0.8rem; box-shadow:0 10px 24px -8px rgba(0,0,0,0.15); }
+  .spec-tag .k{ color:#8A8F98; font-weight:600; text-transform:uppercase; font-size:0.65rem; letter-spacing:0.05em; }
+  .spec-tag .v{ color:var(--ink); font-weight:700; }
+  .tag-1{ bottom:-24px; left:-16px; transform:rotate(-3deg); }
+  .tag-2{ top:-20px; right:-16px; transform:rotate(3deg); }
+
+  /* ABOUT */
+  .about{ background:var(--yellow-light); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .about-inner{ padding:64px 24px; display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; }
+  .about-img{ border-radius:16px; overflow:hidden; border:1px solid var(--line); }
+  .about-img img{ width:100%; height:288px; object-fit:cover; }
+  .about h2{ font-weight:800; font-size:1.9rem; margin-bottom:16px; }
+  .about h2 .accent{ color:var(--yellow-dark); }
+  .about p{ color:#374151; line-height:1.7; }
+  .badge-row{ margin-top:24px; display:flex; flex-wrap:wrap; gap:12px; }
+  .badge-row .spec-tag{ position:static; }
+
+  /* SECTION HEADS */
+  .section-pad{ padding:64px 24px; scroll-margin-top:80px; }
+  .section-head h2{ font-weight:800; font-size:1.9rem; }
+  .section-head h2 .accent{ color:var(--yellow-dark); }
+  .section-head p{ color:var(--gray); margin-top:10px; max-width:520px; }
+
+  /* SERVICES */
+  .services-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-top:40px; }
+  .service-card{ border:1px solid var(--line); border-radius:16px; padding:26px; transition:0.2s; }
+  .service-card:hover{ border-color:var(--yellow); box-shadow:0 14px 28px -16px rgba(242,183,5,0.5); }
+  .service-card .emoji{ font-size:1.8rem; margin-bottom:12px; }
+  .service-card h3{ font-weight:700; font-size:1.1rem; margin-bottom:8px; }
+  .service-card p{ color:var(--gray); font-size:0.92rem; }
+
+  /* GALLERY */
+  .gallery-section{ background:var(--yellow-light); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .gallery-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:40px; }
+  .gallery-item{ aspect-ratio:1/1; border-radius:14px; overflow:hidden; border:1px solid var(--line); }
+  .gallery-item img{ width:100%; height:100%; object-fit:cover; transition:0.3s; }
+  .gallery-item:hover img{ transform:scale(1.06); }
+
+  /* CONTACT */
+  .contact-wrap{ margin-top:40px; background:var(--yellow-light); border:1px solid var(--line); border-radius:20px; padding:40px; display:grid; grid-template-columns:1fr 1fr; gap:36px; }
+  .contact-item{ margin-bottom:22px; }
+  .contact-item:last-child{ margin-bottom:0; }
+  .label{ font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; color:var(--yellow-dark); font-weight:800; margin-bottom:8px; }
+  .value{ font-size:1.1rem; font-weight:700; }
+  .value:hover{ color:var(--yellow-dark); }
+  .phone-line{ margin-bottom:8px; }
+  .map-frame{ border-radius:14px; overflow:hidden; border:1px solid var(--line); min-height:280px; }
+  .map-frame iframe{ width:100%; height:100%; min-height:280px; border:0; display:block; }
+
+  /* FOOTER */
+  footer{ border-top:1px solid var(--line); padding:30px 24px; text-align:center; color:var(--gray); font-size:0.9rem; }
+  footer .logo{ font-size:1.1rem; margin-bottom:6px; }
+
+  /* WHATSAPP FLOAT */
+  .wa-float{ position:fixed; bottom:22px; right:22px; background:#25D366; color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; box-shadow:0 10px 24px -6px rgba(0,0,0,0.35); z-index:60; }
+
+  @media (max-width:850px){
+    .hero{ grid-template-columns:1fr; padding-top:40px; }
+    h1{ font-size:2.1rem; }
+    .nav-links{ display:none; }
+    .about-inner{ grid-template-columns:1fr; }
+    .contact-wrap{ grid-template-columns:1fr; }
+    .gallery-grid{ grid-template-columns:repeat(2,1fr); }
+  }
+</style>
 </head>
-<body class="bg-[#F4F0EA] text-slate-800 font-sans">
+<body>
 
-  <!-- Header -->
-  <header class="max-w-6xl mx-auto p-4 flex justify-between items-center border-b border-gray-200">
-    <h1 class="text-xl font-bold text-slate-900">Phones Master</h1>
-    <nav class="hidden md:flex space-x-6 text-sm font-medium">
-      <a href="#home" class="hover:text-amber-700">Home</a>
-      <a href="#products" class="hover:text-amber-700">Products</a>
-      <a href="#services" class="hover:text-amber-700">Services</a>
-      <a href="#gallery" class="hover:text-amber-700">Gallery</a>
-      <a href="#contact" class="hover:text-amber-700">Contact</a>
-    </nav>
-    <a href="https://wa.me/" target="_blank" class="bg-amber-600 hover:bg-amber-700 text-white text-xs px-4 py-2 rounded-full font-bold shadow-sm transition">
-      WhatsApp
-    </a>
-  </header>
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="#home" class="logo">Phones <span class="accent">Master</span></a>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="https://wa.me/923149601111" target="_blank" class="btn-wa-small">💬 WhatsApp</a>
+  </nav>
+</header>
 
-  <!-- Hero Section (Pehle wali picture aur text) -->
-  <section id="home" class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<!-- HERO -->
+<section id="home" class="hero wrap">
+  <div>
+    <span class="eyebrow">Malakand Chowk · Mardan</span>
+    <h1>Your trusted mobile shop,<br><span class="accent">Phones Master.</span></h1>
+    <p>iPhone, Samsung, Vivo, Oppo &amp; more — checked, verified and ready to use. Visit the shop or message us anytime.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/923149601111" target="_blank" class="btn-primary">💬 Chat on WhatsApp</a>
+      <a href="#contact" class="btn-outline">📍 Get Directions</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="frame"><img src="images/product-2.jpeg" alt="Phones Master shelf stock"></div>
+    <div class="spec-tag tag-1"><div class="k">Model</div><div class="v">iPhone 17 Pro Max</div></div>
+    <div class="spec-tag tag-2"><div class="k">Battery</div><div class="v">100%</div></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about-inner wrap">
+    <div class="about-img"><img src="images/product-4.jpeg" alt="Phones Master shop sign"></div>
     <div>
-      <span class="text-xs uppercase tracking-widest text-amber-700 font-bold border-l-2 border-amber-700 pl-2">PRC CHOWK · MARDAN</span>
-      <h2 class="text-4xl font-extrabold mt-2 leading-tight text-slate-900">Your trusted mobile shop, <br><span class="text-amber-700">Phones Master.</span></h2>
-      <p class="text-sm text-gray-600 mt-4">iPhone, Samsung, Vivo, Oppo & more — checked, verified and ready to use. Visit the shop or message us anytime.</p>
-      <div class="mt-6 flex space-x-3">
-        <a href="https://wa.me/" target="_blank" class="bg-amber-600 hover:bg-amber-700 text-white text-sm px-5 py-2.5 rounded-xl font-bold shadow-md transition">Chat on WhatsApp</a>
-        <a href="#products" class="border border-slate-800 text-sm px-5 py-2.5 rounded-xl font-semibold hover:bg-slate-800 hover:text-white transition">View Products</a>
+      <h2>About <span class="accent">Phones Master</span></h2>
+      <p>Phones Master is a local mobile shop at Majid Khan Plaza, Malakand Chowk, Mardan — dealing in genuine iPhones and Android phones from trusted brands like Samsung, Vivo and Oppo. Every phone is checked for battery health, PTA status and condition before it reaches you.</p>
+      <div class="badge-row">
+        <span class="spec-tag">✅ <span class="v">PTA Approved Stock</span></span>
+        <span class="spec-tag">🔋 <span class="v">Battery Checked</span></span>
+        <span class="spec-tag">🤝 <span class="v">Fair Pricing</span></span>
       </div>
     </div>
-    <!-- Original Hero Image Showcase -->
-    <div class="bg-slate-900 p-3 rounded-3xl shadow-xl">
-      <div class="h-64 rounded-2xl overflow-hidden bg-gray-800">
-        <img src="https://images.unsplash.com/photo-1565849904461-04a58ad377e0?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Phones Master Showcase">
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="section-pad wrap">
+  <div class="section-head">
+    <h2>Our <span class="accent">Services</span></h2>
+    <p>What we offer at Phones Master, Malakand Chowk.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="emoji">📱</div>
+      <h3>New &amp; Used Phones</h3>
+      <p>iPhone, Samsung, Vivo, Oppo and other Android brands — verified condition.</p>
+    </div>
+    <div class="service-card">
+      <div class="emoji">🔄</div>
+      <h3>Sell / Exchange</h3>
+      <p>Sell your old phone or trade it in for an upgrade — fair valuation on the spot.</p>
+    </div>
+    <div class="service-card">
+      <div class="emoji">🛡️</div>
+      <h3>Quality Check</h3>
+      <p>Every phone checked for PTA status, battery health and full function before sale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery-section">
+  <div class="section-pad wrap">
+    <div class="section-head">
+      <h2>Our <span class="accent">Stock</span></h2>
+      <p>Fresh photos from the shop — available phones and models.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/product-1.jpeg" alt="Phones Master stock"></div>
+      <div class="gallery-item"><img src="images/product-2.jpeg" alt="Phones Master stock"></div>
+      <div class="gallery-item"><img src="images/product-3.jpeg" alt="Phones Master stock"></div>
+      <div class="gallery-item"><img src="images/product-4.jpeg" alt="Phones Master stock"></div>
+      <div class="gallery-item"><img src="images/product-5.jpeg" alt="Phones Master stock"></div>
+      <div class="gallery-item"><img src="images/product-6.jpeg" alt="Phones Master stock"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section-pad wrap">
+  <div class="section-head">
+    <h2>Visit or <span class="accent">contact us</span></h2>
+    <p>Call, WhatsApp, or come by the shop directly.</p>
+  </div>
+  <div class="contact-wrap">
+    <div>
+      <div class="contact-item">
+        <div class="label">Phone</div>
+        <div class="phone-line"><a class="value" href="tel:03149601111">0314-9601111</a> — Arshad Ahmad</div>
+        <div class="phone-line"><a class="value" href="tel:03390461111">0339-0461111</a> — Nabeel Arshad</div>
+        <div><a class="value" href="tel:03134611111">0313-4611111</a> — Nabeel Arshad</div>
+      </div>
+      <div class="contact-item">
+        <div class="label">WhatsApp</div>
+        <a class="value" href="https://wa.me/923149601111" target="_blank">Message us on WhatsApp</a>
+      </div>
+      <div class="contact-item">
+        <div class="label">Location</div>
+        <div class="value">Majid Khan Plaza, Malakand Chowk, Mardan</div>
       </div>
     </div>
-  </section>
-
-  <!-- Dynamic CMS Products Section -->
-  <section id="products" class="max-w-6xl mx-auto px-4 py-12">
-    <div class="border-b pb-4 mb-8 flex justify-between items-end border-gray-300">
-      <div>
-        <h3 class="text-2xl font-bold text-slate-900">Available Smartphones</h3>
-        <p class="text-xs text-gray-500">Live inventory updated directly from CMS</p>
-      </div>
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps?q=Malakand%20Chowk%2C%20Mardan&output=embed" loading="lazy"></iframe>
     </div>
+  </div>
+</section>
 
-    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      <p class="col-span-full text-center text-gray-500 py-10">Loading products...</p>
-    </div>
-  </section>
+<!-- FOOTER -->
+<footer>
+  <div class="logo">Phones <span class="accent">Master</span></div>
+  Majid Khan Plaza, Malakand Chowk, Mardan
+</footer>
 
-  <!-- Gallery Section -->
-  <section id="gallery" class="max-w-6xl mx-auto px-4 py-12 border-t border-gray-300">
-    <h3 class="text-2xl font-bold mb-6 text-slate-900">Shop Gallery</h3>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <div class="h-48 rounded-2xl bg-gray-200 overflow-hidden shadow-sm">
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Gallery 1">
-      </div>
-      <div class="h-48 rounded-2xl bg-gray-200 overflow-hidden shadow-sm">
-        <img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Gallery 2">
-      </div>
-      <div class="h-48 rounded-2xl bg-gray-200 overflow-hidden shadow-sm">
-        <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="Gallery 3">
-      </div>
-    </div>
-  </section>
+<a href="https://wa.me/923149601111" target="_blank" class="wa-float" aria-label="Chat on WhatsApp">💬</a>
 
-  <!-- Footer -->
-  <footer id="contact" class="bg-slate-900 text-white py-8 mt-12 text-center text-xs text-gray-400">
-    <p>©️ Phones Master - PRC Chowk, Mardan. Powered by Netlify CMS.</p>
-  </footer>
-
-  <!-- Script to Fetch CMS Products -->
-  <script>
-    async function fetchProducts() {
-      const grid = document.getElementById('product-grid');
-      try {
-        const response = await fetch('https://api.github.com/repos/aleeshaarshad785-glitch/admin-cms/contents/content/phones');
-        
-        if (!response.ok) {
-          grid.innerHTML = '<p class="col-span-full text-center text-gray-500">No products added yet.</p>';
-          return;
-        }
-
-        const files = await response.json();
-        grid.innerHTML = '';
-
-        for (const file of files) {
-          if (file.name.endsWith('.md')) {
-            const res = await fetch(file.download_url);
-            const text = await res.text();
-            
-            const match = text.match(/---([\s\S]*?)---/);
-            if (match) {
-              const yaml = match[1];
-              const getVal = (key) => {
-                const m = yaml.match(new RegExp(`${key}:\\s*"(.*?)"`)) || yaml.match(new RegExp(`${key}:\\s*(.*)`));
-                return m ? m[1].replace(/^"|"$/g, '').trim() : '';
-              };
-
-              const title = getVal('title');
-              const brand = getVal('brand');
-              const price = getVal('price');
-              const specs = getVal('specs');
-              const condition = getVal('condition');
-              const image = getVal('image');
-
-              const card = `
-                <div class="bg-white rounded-2xl p-4 shadow-sm border border-gray-100 hover:shadow-md transition">
-                  <div class="h-48 rounded-xl bg-gray-50 overflow-hidden flex items-center justify-center mb-3">
-                    ${image ? `<img src="${image}" class="w-full h-full object-contain p-2 transform scale-105">` : '<span class="text-gray-400 text-xs">No Image</span>'}
-                  </div>
-                  <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full uppercase">${brand}</span>
-                  <h4 class="text-base font-bold mt-2 text-slate-900">${title}</h4>
-                  <p class="text-xs text-gray-500 mt-1">${specs} • ${condition}</p>
-                  <div class="mt-4 pt-3 border-t border-gray-100 flex items-center justify-between">
-                    <div>
-                      <span class="text-xs text-gray-400 block">Price</span>
-                      <span class="text-sm font-extrabold text-slate-900">PKR ${price}</span>
-                    </div>
-                    <a href="https://wa.me/?text=Hi%20Phones%20Master,%20I%20want%20to%20buy%20${encodeURIComponent(title)}" target="_blank" class="bg-green-600 hover:bg-green-700 text-white text-xs px-3.5 py-2 rounded-xl font-semibold">
-                      Buy Now
-                    </a>
-                  </div>
-                </div>
-              `;
-              grid.innerHTML += card;
-            }
-          }
-        }
-      } catch (err) {
-        console.error(err);
-        grid.innerHTML = '<p class="col-span-full text-center text-red-500">Failed to load products.</p>';
-      }
-    }
-
-    fetchProducts();
-  </script>
 </body>
 </html>
