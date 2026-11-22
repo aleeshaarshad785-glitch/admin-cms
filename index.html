@@ -213,7 +213,42 @@
     </div>
   </div>
 </section>
-
+<!-- LATEST PHONES -->
+<style>
+  .phones-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+  .phone-card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+  .phone-card img{width:100%;height:200px;object-fit:cover;display:block}
+  .phone-card .pc{padding:12px}
+  .phone-card h3{margin:0 0 4px;font-size:17px}
+  .phone-card .pr{font-weight:700;color:#b8860b;margin:4px 0}
+  .phone-card small{display:block;color:#555}
+  .phone-card a{display:inline-block;margin-top:8px;padding:6px 12px;background:#25d366;color:#fff;border-radius:8px;text-decoration:none;font-size:14px}
+</style>
+<section id="stock" class="section-pad wrap">
+  <div class="section-head">
+    <h2>Latest <span class="accent">Phones</span></h2>
+    <p>New arrivals from the shop.</p>
+  </div>
+  <div id="phones" class="phones-grid"></div>
+</section>
+<script>
+  fetch('/products.json').then(function(r){return r.json()}).then(function(list){
+    var box=document.getElementById('phones');
+    if(!list.length){document.getElementById('stock').style.display='none';return}
+    list.forEach(function(p){
+      var c=document.createElement('div');c.className='phone-card';
+      if(p.image){var im=document.createElement('img');im.src=p.image;im.alt=p.title||'';c.appendChild(im)}
+      var d=document.createElement('div');d.className='pc';
+      var h=document.createElement('h3');h.textContent=p.title||'';d.appendChild(h);
+      if(p.price){var pr=document.createElement('div');pr.className='pr';pr.textContent='Rs '+p.price;d.appendChild(pr)}
+      [p.specs,p.condition].forEach(function(t){if(t){var s=document.createElement('small');s.textContent=t;d.appendChild(s)}});
+      var a=document.createElement('a');a.target='_blank';
+      a.href='https://wa.me/923149601111?text='+encodeURIComponent('Hi, I am interested in '+(p.title||'this phone'));
+      a.textContent='WhatsApp';d.appendChild(a);
+      c.appendChild(d);box.appendChild(c);
+    });
+  }).catch(function(){document.getElementById('stock').style.display='none'});
+</script>
 <!-- CONTACT -->
 <section id="contact" class="section-pad wrap">
   <div class="section-head">
