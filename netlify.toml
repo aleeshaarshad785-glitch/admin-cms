@@ -1,5 +1,7 @@
 [build]
+  command = "node build-products.js"
   publish = "."
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
